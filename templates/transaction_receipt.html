@@ -1,0 +1,34 @@
+{% extends "view.html" %}
+
+{% block title %}
+Transactions History
+{% endblock %}
+
+{% block body %}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Receipt Amount</th>
+                <th>Receipt Date/Time</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            {%for row in goods_sold %}
+            <tr>
+                <td>{{row["transaction_id"]}}</td>
+                <td>{{row["receipt_total"]}}</td>
+                <td>{{row["receipt_time"]}}</td>
+                
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

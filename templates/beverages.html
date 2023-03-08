@@ -1,0 +1,4 @@
+{% for beverage_product in beverage_results %}
+<li>Name: {{beverage_product["product_type"]}}, Available quantity: {{beverage_product["unit_amt"]}}, Unit Price: EGP
+    {{beverage_product["unit_price"]}}</li>
+{% endfor %}

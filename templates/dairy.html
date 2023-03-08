@@ -1,0 +1,3 @@
+{% for dairy_product in dairy_results %}
+<li>Name: {{dairy_product["product_type"]}}, Available quantity: {{dairy_product["unit_amt"]}}, Unit Price: EGP {{dairy_product["unit_price"]}}</li>
+{% endfor %}

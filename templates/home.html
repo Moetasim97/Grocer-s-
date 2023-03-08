@@ -1,0 +1,167 @@
+{% extends "view.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+    
+   <h2> Welcome to the homepage, {{name}}</h2>
+   <br>
+
+
+<div class="section">
+<div class="container-form">
+<div class="mb-3">
+    <input autocomplete="off" autofocus class="form-control form-control-sm" id="fruitq" name="fruit"
+        placeholder="Fruits&Vegetables" type="Add to cart">
+        
+</div>
+    
+
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="meatq" name="meat"
+            placeholder="Meat&Poultry" type="Add to cart">
+            
+    </div>
+    
+
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="frozenq" name="froze"
+            placeholder="Frozen" type="Add to cart">
+            
+    </div>
+    
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="dairyq" name="dairyEggs"
+            placeholder="Dairy&Eggs" type="Add to cart">
+            
+    </div>
+   
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="cupboardq" name="cupb"
+            placeholder="Food Cupboard" type="Add to cart">
+            
+    </div>
+   
+
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="snacksq" name="snack"
+            placeholder="Snacks" type="Add to cart">
+            
+    </div>
+   
+
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="beverageq" name="beverage"
+            placeholder="Beverages" type="Add to cart">
+            
+    </div>
+   
+
+
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="detergentq" name="detergent"
+            placeholder="Laundry&Detergents" type="Add to cart">
+            
+    </div>
+   
+</div>
+<br>
+<ul class="fruit_ul"></ul>
+<ul class="meat_ul"></ul>
+<ul class="frozen_ul"></ul>
+<ul class="dairy_ul"></ul>
+<ul class="cupboard_ul"></ul>
+<ul class="snacks_ul"></ul>
+<ul class="beverages_ul"></ul>
+<ul class="detergents_ul"></ul>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% if session["user_id"] %}
+<div class="container-form">
+    <form action="/buyfruit" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="fruit_id" name="buyFruit" placeholder="Fruits&Vegetables" type="text">
+        <input autocomplete="off" autofocus class="form-control form-control-sm" id="ShareNumber" name="fruitAmount" placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button></form>
+    <form action="/buymeat" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="meat_id" name="buyMeat"
+                placeholder="Meat&Poultry" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="meatAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buyfrozen" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="frozen_id" name="buyFrozen"
+                placeholder="Frozen" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="frozenAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buydairy" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="dairy_id" name="buyDairy"
+                placeholder="Dairy&Eggs" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="dairyAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buycupboard" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="cupboard_id" name="buyCupboard"
+                placeholder="Food Cupboard" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="cupboardAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buysnacks" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="snacks_id" name="buySnacks"
+                placeholder="Snacks" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="snacksAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buybeverages" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="beverages_id" name="buyBeverages"
+                placeholder="Beverages" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="beverageAmount" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+    <form action="/buydetergents" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="detergents_id" name="symbol"
+                placeholder="Laundry&Detergents" type="text">
+            <input autocomplete="off" autofocus class="form-control form-control-sm" id="ShareNumber" name="shares"
+                placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Add to cart</button>
+    </form>
+
+</div>
+<br>
+<div class="check">
+<button class="btn btn-primary btn-lg" type="submit">Make transaction</button></div>
+You are logged in as {{name}} Click here to<a href="/logout"> log out</a>
+{% endif %}
+{% endblock %}

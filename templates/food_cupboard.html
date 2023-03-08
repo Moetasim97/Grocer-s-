@@ -1,0 +1,4 @@
+{% for cup_product in cupboard_results %}
+<li>Name: {{cup_product["product_type"]}}, Available quantity: {{cup_product["unit_amt"]}}, Unit Price: EGP
+    {{cup_product["unit_price"]}}</li>
+{% endfor %}

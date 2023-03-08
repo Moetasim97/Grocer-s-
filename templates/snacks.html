@@ -1,0 +1,4 @@
+{% for snack in snacks_results %}
+<li>Name: {{snack["product_type"]}}, Available quantity: {{snack["unit_amt"]}}, Unit Price: EGP
+    {{snack["unit_price"]}}</li>
+{% endfor %}
